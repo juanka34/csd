@@ -13,6 +13,7 @@ public final class listado_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_set_var_value_scope_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_value_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -23,11 +24,13 @@ public final class listado_jsp extends org.apache.jasper.runtime.HttpJspBase
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_set_var_value_scope_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_forEach_var_items.release();
     _jspx_tagPool_c_set_var_value_scope_nobody.release();
+    _jspx_tagPool_c_url_value_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -91,6 +94,18 @@ public final class listado_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<h1>");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${titulo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</h1>\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/WEB-INF/buscar/buscarform.jsp", out, false);
+      out.write("\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
       out.write("\t<input type=\"button\"\r\n");
       out.write("value=\"jugador\" name=\"jugador\" class=\"btn btn-primary\" onclick=\"self.location.href = '/csd/jugador'\" />\r\n");
       out.write("<input type=\"button\"\r\n");
@@ -106,7 +121,7 @@ public final class listado_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t<td style=\"width: 10%\">Federacion</td>\t\t\t\t\r\n");
       out.write("\t\t\t\t<td style=\"width: 10%\">equipo</td>\r\n");
       out.write("\t\t\t\t<td style=\"width: 10%\">Presupuesto</td>\r\n");
-      out.write("\t\t\t\t<td style=\"width: 10%\">detalles</td>\r\n");
+      out.write("\t\t\t\t\r\n");
       out.write("\t\t\t\t<td style=\"width: 10%\">Editar</td>\r\n");
       out.write("\t\t\t\t<td style=\"width: 10%\">borrar</td>\r\n");
       out.write("\t\t\t</tr>\r\n");
@@ -274,22 +289,32 @@ public final class listado_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${equipo.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t<td>");
+          out.write("\t\t\t<td><a href=\"");
+          if (_jspx_meth_c_url_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write('"');
+          out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${equipo.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td>\r\n");
+          out.write("</a></td>\r\n");
           out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${equipo.estadio}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t<td><img alt=\"\" src=\"");
+          out.write("\t\t\t\t\t<td><a href=\"");
+          if (_jspx_meth_c_url_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("\"><img alt=\"\" src=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${equipo.federacion.imagen}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" height=\"50px\"></td>\r\n");
-          out.write("\t\t\t\t\t<td><img alt=\"\" src=\"");
+          out.write("\" height=\"50px\"></a></td>\r\n");
+          out.write("\t\t\t\t\t<td><a href=\"");
+          if (_jspx_meth_c_url_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("\"><img alt=\"\" src=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${equipo.imagen}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" height=\"50px\"></td>\r\n");
+          out.write("\" height=\"50px\"></a></td>\r\n");
           out.write("\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${equipo.presupuesto}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t<td><button type=\"submit\" class=\"btn btn-primary btn-detalle\">detalles</button></td>\r\n");
+          out.write("\t\t\t\t\r\n");
           out.write("\t\t\t\t\t<td><button type=\"submit\" class=\"btn btn-warning btn-editar\">Editar</button></td>\r\n");
           out.write("\t\t\t\t\t<td><button type=\"submit\" class=\"btn btn-danger btn-confirmar-borrar\">borrar</button></td>\r\n");
           out.write("\t\t\t\t</tr>\r\n");
@@ -310,6 +335,60 @@ public final class listado_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_th_c_forEach_0.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
     }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_url_0.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("/equipos/detalles/${equipo.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
+    if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_1 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_url_1.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("/equipos/detalles/${equipo.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_url_1 = _jspx_th_c_url_1.doStartTag();
+    if (_jspx_th_c_url_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_2 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_url_2.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("/equipos/detalles/${equipo.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_url_2 = _jspx_th_c_url_2.doStartTag();
+    if (_jspx_th_c_url_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_2);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_2);
     return false;
   }
 

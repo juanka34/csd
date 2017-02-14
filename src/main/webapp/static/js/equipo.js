@@ -52,7 +52,6 @@ $(document).ready(function() {
 
 $('#modal-equipos').on('hide.bs.modal', limpiarModalEditar);
 
-});
 
 var limpiarModalEditar = function(){
     $('#id').val('');
@@ -63,3 +62,4 @@ var limpiarModalEditar = function(){
    
     
 };
+});

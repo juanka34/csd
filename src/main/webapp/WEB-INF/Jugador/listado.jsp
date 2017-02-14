@@ -31,6 +31,10 @@
 	<h1>${titulo}</h1>
 	
 	
+	<jsp:include page="/WEB-INF/buscar/buscarform.jsp"></jsp:include>
+	
+	
+	
 <input type="button"
 value="federacion" name="federacion" class="btn btn-primary" onclick="self.location.href = '/csd/federacion'" />
 <input type="button"
@@ -46,7 +50,6 @@ value="equipos" name="equipos" class="btn btn-primary" onclick="self.location.hr
 				<td style="width: 10%">Imagen</td>
 				<td style="width: 10%">Equipo</td>
 				<td style="width: 10%">federacion</td>	
-				<td style="width: 10%">detalles</td>
 				<td style="width: 10%">Editar</td>
 				<td style="width: 10%">borrar</td>
 			</tr>
@@ -55,14 +58,15 @@ value="equipos" name="equipos" class="btn btn-primary" onclick="self.location.hr
 			<c:forEach items="${jugadores}" var="jugador">
 				<tr style="background-color:transparent; font-weight:bold;font-size: large;color: black;text-align: center;" data-id="${jugador.id}">
 					<td>${jugador.id}</td>
-					<td>${jugador.nombre}</td>
+					<td><a href="<c:url value="/jugador/detalles/${jugador.id}" />">${jugador.nombre}</a></td>
 					<td>${jugador.edad}</td>
 					<td>${jugador.goles}</td>
-					<td><img alt="" src="${jugador.imagen}" height="50px"></td>
+					<td><a href="<c:url value="/jugador/detalles/${jugador.id}" />"><img alt="" src="${jugador.imagen}" height="50px"></a></td>
+					
 					<td><img alt="" src="${jugador.equipo.imagen}" height="50px"></td></td>
 					<td><img alt="" src="${jugador.equipo.federacion.imagen}" height="50px"></td></td>
 					
-					<td><button type="submit" class="btn btn-primary btn-detalle">detalles</button></td>
+					
 					<td><button type="submit" class="btn btn-warning btn-editar">Editar</button></td>
 					<td><button type="submit" class="btn btn-danger btn-confirmar-borrar">borrar</button></td>
 					

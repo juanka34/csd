@@ -29,6 +29,17 @@
 <body style="background: url('http://fondosmovil.net/images/img9/imagenes-de-fondo-para-fondo-celular-en-hd-28.jpg');">
 	
 	<h1>${titulo}</h1>
+	
+	
+	
+	
+<jsp:include page="/WEB-INF/buscar/buscarform.jsp"></jsp:include>
+	
+	
+	
+	
+	
+	
 	<input type="button"
 value="jugador" name="jugador" class="btn btn-primary" onclick="self.location.href = '/csd/jugador'" />
 <input type="button"
@@ -44,7 +55,7 @@ value="federacion" name="federacion" class="btn btn-primary" onclick="self.locat
 				<td style="width: 10%">Federacion</td>				
 				<td style="width: 10%">equipo</td>
 				<td style="width: 10%">Presupuesto</td>
-				<td style="width: 10%">detalles</td>
+				
 				<td style="width: 10%">Editar</td>
 				<td style="width: 10%">borrar</td>
 			</tr>
@@ -53,12 +64,12 @@ value="federacion" name="federacion" class="btn btn-primary" onclick="self.locat
 			<c:forEach items="${equipos}" var="equipo">
 				<tr style="background-color:transparent;font-weight:bold;font-size: large;color: white;text-align: center;" data-id="${equipo.id}">
 					<td>${equipo.id}</td>
-					<td>${equipo.nombre}</td>
+			<td><a href="<c:url value="/equipos/detalles/${equipo.id}" />">${equipo.nombre}</a></td>
 					<td>${equipo.estadio}</td>
-					<td><img alt="" src="${equipo.federacion.imagen}" height="50px"></td>
-					<td><img alt="" src="${equipo.imagen}" height="50px"></td>
+					<td><a href="<c:url value="/equipos/detalles/${equipo.id}" />"><img alt="" src="${equipo.federacion.imagen}" height="50px"></a></td>
+					<td><a href="<c:url value="/equipos/detalles/${equipo.id}" />"><img alt="" src="${equipo.imagen}" height="50px"></a></td>
 					<td>${equipo.presupuesto}</td>
-					<td><button type="submit" class="btn btn-primary btn-detalle">detalles</button></td>
+				
 					<td><button type="submit" class="btn btn-warning btn-editar">Editar</button></td>
 					<td><button type="submit" class="btn btn-danger btn-confirmar-borrar">borrar</button></td>
 				</tr>

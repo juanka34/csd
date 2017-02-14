@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+import csd.modelo.entidades.Equipos;
 import csd.modelo.entidades.Federacion;
 import csd.modelo.repositorios.FederacionRepositorio;
 
@@ -72,5 +72,13 @@ public class FederacionController {
 		Federacion federacion = federacionRepo.findOne(id);
 		return federacion;
 	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/detalles/{id}")
+    public String detallesFederacion(Model model,@PathVariable Long id){
+      Federacion federacion = federacionRepo.findOne(id);
+        model.addAttribute("federacion", federacion);
+        return "Federacion/detalles";
+       
+    }
 
 }

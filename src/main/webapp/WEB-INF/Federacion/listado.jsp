@@ -39,6 +39,13 @@
 <body style="background: url('	https://thumbs.dreamstime.com/z/baln-de-ftbol-con-los-ptalos-azules-abstractos-42286513.jpg">
 
 	<h1>${titulo}</h1>
+	
+	<jsp:include page="/WEB-INF/buscar/buscarform.jsp"></jsp:include>
+	
+	
+	
+	
+	
 	<input type="button"
 value="jugador" name="jugador" class="btn btn-primary" onclick="self.location.href = '/csd/jugador'" />
 <input type="button"
@@ -52,7 +59,6 @@ value="equipos" name="equipos" class="btn btn-primary" onclick="self.location.hr
 				<td style="width: 30%">Nombre</td>
 				<td style="width: 20%">Pais</td>
 				<td style="width: 10%">Imagen</td>
-				<td style="width: 10%">detalles</td>
 				<td style="width: 10%">Editar</td>
 				<td style="width: 10%">borrar</td>
 			</tr>
@@ -61,11 +67,12 @@ value="equipos" name="equipos" class="btn btn-primary" onclick="self.location.hr
 			<c:forEach items="${federaciones}" var="federacion">
 				<tr style=" background-color:transparent; font-weight:bold;font-size: large;color: black;text-align: center;" data-id="${federacion.id}">
 					<td>${federacion.id}</td>
-					<td>${federacion.nombre}</td>
+					<td><a href="<c:url value="/federacion/detalles/${federacion.id}" />">${federacion.nombre}</a></td>
 					<td>${federacion.pais}</td>
-					<td><img alt="" src="${federacion.imagen}" height="50px"></td>
+					<td><a href="<c:url value="/federacion/detalles/${federacion.id}" />"><img alt="" src="${federacion.imagen}" height="50px"></a></td>
 					
-					<td><button type="submit" class="btn btn-primary btn-detalle">detalles</button></td>
+					
+				
 					<td><button type="submit" class="btn btn-warning btn-editar">Editar</button></td>
 					<td><button type="submit" class="btn btn-danger btn-confirmar-borrar">borrar</button></td>
 				</tr>
